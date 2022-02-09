@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&display=swap');
+
+
+.mainGrid::-webkit-scrollbar {
+    width: 10px;
+    scrollbar-width: 10px;
+  }
+
+.mainGrid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+.mainGrid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+ /* width */
+ ::-webkit-scrollbar {
+    width: 10px;
+    scrollbar-width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(71, 71, 71);
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
