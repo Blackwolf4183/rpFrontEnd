@@ -71,7 +71,7 @@ const Signup = () => {
 
   return (
     <Formik
-      initialValues={{ mail: '', password: '', username: '' }}
+      initialValues={{ mail: '',steamId: '', password: '', username: '' }}
       onSubmit={(values, actions) => {
         setTimeout(() => {
           const { mail, password, username, steamId } = values;
@@ -90,12 +90,12 @@ const Signup = () => {
               password: password,
             })
             .then(response => {
-              //console.log(response.data)
+              console.log(response.data)
               const responseData = response.data;
               actions.setSubmitting(false);
-              console.log(responseData.userId);
-              //TODO: poner token
-              //auth.login(responseData.userId, responseData.token);
+              //console.log(responseData.userId);
+              
+              auth.login(responseData.userId, responseData.token);
             })
             .catch(error => {
               actions.setSubmitting(false);

@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import {
@@ -55,7 +55,7 @@ const Login = () => {
               password: password,
             })
             .then(response => {
-              /* console.log(response.data); */
+              console.log(response.data);
               const responseData = response.data;
               actions.setSubmitting(false);
               auth.login(responseData.userId, responseData.token);
@@ -123,9 +123,9 @@ const Login = () => {
                     <Text h="0">{errorMsg}</Text>
                   </HStack>
                 )}
-                <HStack w="100%">
+                <HStack w="100%" >
                   <Button
-                    mt={2}
+                    mt={6}
                     mb={10}
                     colorScheme="teal"
                     isLoading={props.isSubmitting}

@@ -33,18 +33,14 @@ const Navbar = () => {
         top="25px"
         maxWidth="80%"
       >
-        <HStack>
-          <AuthButton />
-
-          <NavLink to="/">
-            <IconButton textAlign={'center'}>
-              <FontAwesomeIcon style={{ fontSize: '20px' }} icon={faHome} />
-            </IconButton>
-          </NavLink>
-        </HStack>
+        <NavLink to="/">
+          <IconButton textAlign={'center'} colorScheme="teal">
+            <FontAwesomeIcon style={{ fontSize: '20px' }} icon={faHome} />
+          </IconButton>
+        </NavLink>
 
         <Heading fontSize="lg" lineHeight={'40px'}>
-          <NavLink to="/">
+          <NavLink to="/main">
             <motion.p
               whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
             >

@@ -16,9 +16,9 @@ export const GlassImageWrapper = props => {
       {/*Crystal blur */}
       <Flex
         width="100vw"
-        background="rgba( 255, 255, 255, 0.05 )"
+        background={props.bgC || "rgba( 255, 255, 255, 0.05 )"}
         boxShadow="0 8px 32px 0 rgba( 31, 38, 135, 0.37 )"
-        backdropFilter="blur( 2px )"
+        backdropFilter={props.bgB || "blur( 2px )"}
       >
         {/* Border around content */}
         <Grid

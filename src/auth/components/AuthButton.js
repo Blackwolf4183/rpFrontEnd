@@ -19,7 +19,7 @@ const AuthButton = () => {
 
     return (
     <NavLink to="/auth">
-      <IconButton onClick={logout} colorScheme="teal">
+      <IconButton onClick={logout} colorScheme="teal" position={"absolute"} right="0" m={5}>
         <FontAwesomeIcon
           style={{ fontSize: '20px' }}
           icon={auth.isLoggedIn ? faSignOutAlt : faUser}

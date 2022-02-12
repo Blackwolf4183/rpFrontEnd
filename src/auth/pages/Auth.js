@@ -7,14 +7,16 @@ import Signup from '../components/Signup';
 const Auth = ({isLoging}) => {
 
   return (
-    <GlassImageWrapper>
+    <GlassImageWrapper bgC="rgba( 0, 0, 0, 0.35 )" bgB="blur( 7px )">
     <Center mt="50px">
       <Box
         maxWidth="400px"
         h="auto"
         w="90%"
         mb="150px"
-        bgColor="news"
+        borderWidth={2}
+        borderColor="border"
+        bgColor={"blackAlpha.300"}
         borderRadius={'md'}
       >
         {isLoging ? (
