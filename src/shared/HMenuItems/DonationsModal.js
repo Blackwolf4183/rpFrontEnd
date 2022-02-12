@@ -29,7 +29,7 @@ const DonationsModal = props => {
 
           <Link isExternal href={'https://paypal.com'} textDecor="none"> 
             <Button colorScheme="teal" variant="outline" mt="20px" mb="20px" p="10px 5px 10px 5px">
-              Nuestro Paypal
+              Donaciones
               <Box ml="10px">
                 <FontAwesomeIcon
                   icon={faPaypal}
@@ -47,7 +47,7 @@ const DonationsModal = props => {
 
           <Link isExternal href={'https://paypal.me/YtterbiumFivem?country.x=ES&locale.x=es_ES'}> 
             <Button colorScheme="purple" variant="outline" mt="20px" mb="20px" p="10px 5px 10px 5px">
-              Paypal del programador
+              Donaciones al programador
               <Box ml="10px">
                 <FontAwesomeIcon
                   icon={faPaypal}

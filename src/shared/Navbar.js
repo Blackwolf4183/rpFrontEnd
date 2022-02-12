@@ -17,15 +17,10 @@ import { Authcontext } from '../context/auth-context';
 import { useContext } from 'react';
 
 import { motion } from 'framer-motion';
+import AuthButton from '../auth/components/AuthButton';
 
 const Navbar = () => {
   const auth = useContext(Authcontext);
-
-  const logout = () => {
-    if (auth.isLoggedIn) {
-      auth.logout();
-    }
-  };
 
   return (
     <Center>
@@ -39,28 +34,23 @@ const Navbar = () => {
         maxWidth="80%"
       >
         <HStack>
+          <AuthButton />
+
           <NavLink to="/">
             <IconButton textAlign={'center'}>
               <FontAwesomeIcon style={{ fontSize: '20px' }} icon={faHome} />
             </IconButton>
           </NavLink>
-
-          <NavLink to="/auth">
-            <IconButton onClick={logout}>
-              <FontAwesomeIcon
-                style={{ fontSize: '20px' }}
-                icon={auth.isLoggedIn ? faSignOutAlt : faUser}
-              />
-            </IconButton>
-          </NavLink>
         </HStack>
 
         <Heading fontSize="lg" lineHeight={'40px'}>
-          <NavLink to="/"><motion.p
-            whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
-          >
-            Inicio
-          </motion.p></NavLink>
+          <NavLink to="/">
+            <motion.p
+              whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
+            >
+              Inicio
+            </motion.p>
+          </NavLink>
         </Heading>
         {/* TODO: animación hacia cierto elemento de la pagina (scroll) */}
         <Heading

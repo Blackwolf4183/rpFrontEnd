@@ -1,24 +1,23 @@
-import HamburguerMenu from '../../shared/HamburguerMenu'
+import HamburguerMenu from '../../shared/HamburguerMenu';
 import Logo from '../../shared/Logo';
 import MediaIconBundle from '../../shared/MediaIconBundle';
 
-import { VStack, Button,GridItem } from '@chakra-ui/react';
+import { VStack, Button, GridItem } from '@chakra-ui/react';
 import { GlassImageWrapper } from '../components/GlassImageWrapper';
 import { motion } from 'framer-motion';
 import { useHistory } from 'react-router-dom';
 
-
 const MotionButton = motion(Button);
 
-const MainDesktopPage = ({hide}) => {
-
+const MainDesktopPage = ({ hide }) => {
   const history = useHistory();
-
 
   return (
     <GlassImageWrapper gridLayout={'repeat(3, 1fr)'}>
-      <GridItem colStart={1}><HamburguerMenu /> </GridItem>
-      
+      <GridItem colStart={1}>
+          <HamburguerMenu />
+      </GridItem>
+
       <VStack spacing="20px" alignItems="center">
         <Logo hidden={hide} />
         <MotionButton

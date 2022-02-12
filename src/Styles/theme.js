@@ -26,7 +26,7 @@ const colors = {
 
     /* INFORMATIONPANNEL TYPES */
     /* news:"rgba(125, 58, 180, 0.85)", */
-    news:"rgba(16, 121, 150, 0.85)",
+    news:"rgba(16, 121, 150, 0.95)",
     updates:"rgba(192, 48, 29, 0.85)",
     aboutUsBg:"rgba(0, 0, 0, 0.80)",
 
@@ -44,12 +44,6 @@ const fonts = {
     body: "Nixie One",
 }
 
-const animations = {
-  times:{
-    changePage:1500
-  }
-}
-
-const myNewTheme = extendTheme({animations,config,colors,fonts})
+const myNewTheme = extendTheme({config,colors,fonts})
 
 export default myNewTheme
