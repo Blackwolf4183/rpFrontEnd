@@ -1,4 +1,5 @@
 
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import AuthButton from '../../auth/components/AuthButton';
 import HamburguerMenu from '../../shared/HamburguerMenu';
@@ -13,7 +14,7 @@ const InfoPage = () => {
         <Navbar/>
         <AuthButton/>
         <DonationsSection/>
-
+        <Box h="1000px"/>
 
     </>
   );

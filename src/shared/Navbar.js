@@ -39,7 +39,7 @@ const Navbar = () => {
           </IconButton>
         </NavLink>
 
-        <Heading fontSize="lg" lineHeight={'40px'}>
+        <Heading fontSize="lg" lineHeight={'40px'} userSelect="none">
           <NavLink to="/main">
             <motion.p
               whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
@@ -54,6 +54,7 @@ const Navbar = () => {
           lineHeight={'40px'}
           whiteSpace="nowrap"
           cursor="pointer"
+          userSelect="none"
         >
           <motion.p
             whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
@@ -62,7 +63,12 @@ const Navbar = () => {
           </motion.p>
         </Heading>
 
-        <Heading fontSize="lg" lineHeight={'40px'} cursor="pointer">
+        <Heading
+          fontSize="lg"
+          lineHeight={'40px'}
+          cursor="pointer"
+          userSelect="none"
+        >
           <motion.p
             whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
           >
@@ -70,7 +76,12 @@ const Navbar = () => {
           </motion.p>
         </Heading>
 
-        <Heading fontSize="lg" lineHeight={'40px'} cursor="pointer">
+        <Heading
+          fontSize="lg"
+          lineHeight={'40px'}
+          cursor="pointer"
+          userSelect="none"
+        >
           <motion.p
             whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
           >
