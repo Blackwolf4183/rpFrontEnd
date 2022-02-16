@@ -55,16 +55,19 @@ const DonationsModal = ({ isOpen, onClose }) => {
         .then(function (details) {
           //console.log(details);
           //alert("Transaction completed by " + details.payer.name.given_name)
-          const donation = {
+
+          
+          const testDonation = {
             order_id: data.orderID,
             paypal_email: details.payer.email_address,
             paypal_name: details.payer.name.given_name,
             paypal_surname: details.payer.name.surname,
-            paypal_payer_id: details.payer.name.surname,
+            paypal_payer_id: details.payer.payer_id,
             concept: concept,
             amount: price,
           };
-          //alert(JSON.stringify(donation));
+
+          console.log(testDonation);
 
           const config = {
             headers: {
@@ -72,20 +75,25 @@ const DonationsModal = ({ isOpen, onClose }) => {
             },
           };
 
-          let formData = new FormData();
-          formData.append('concept', concept);
-          formData.append('amount', price);
-
           axios
-            .post('http://localhost:5000/api/donations/', {
-              concept: concept,
-              amount: price
-            },config)
+            .post(
+              'http://localhost:5000/api/donations/',
+              {
+                order_id: data.orderID,
+                paypal_email: details.payer.email_address,
+                paypal_name: details.payer.name.given_name,
+                paypal_surname: details.payer.name.surname,
+                paypal_payer_id: details.payer.name.surname,
+                concept: concept,
+                amount: price,
+              },
+              config
+            )
             .then(response => {
-              console.log("response data: " + response.data);
+              console.log('response data: ' + response.data);
             })
             .catch(err => {
-              console.log(err)
+              console.log(err);
             });
         })
         .catch(err => {

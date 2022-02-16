@@ -27,7 +27,7 @@ const DonationsModal = props => {
         <ModalBody textAlign="center">
           <Text fontWeight="600" m="0px 20px 0px 20px">Contribuye al servidor de AlocaoRP aportando lo que desees a nuestro paypal.</Text>
 
-          <Link isExternal href={'https://paypal.com'} textDecor="none"> 
+          <Link href={'/main/'} textDecor="none"> 
             <Button colorScheme="teal" variant="outline" mt="20px" mb="20px" p="10px 5px 10px 5px">
               Donaciones
               <Box ml="10px">
