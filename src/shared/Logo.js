@@ -45,11 +45,11 @@ const Logo = ({ isMobile, hidden }) => {
         w={isLowHeight ? [150, 200] : [200, 250, 330]} /* Ratio de 1.32 */
         h={isLowHeight ? [113, 151] : [151, 189, 250]}
         userSelect="none"
-        alt="Logo AlocaoRP"
+        alt="Logo El Efecto Rp"
         mt={isMobile ? '10vh' : isLowHeight ? '5vh' : '15vh'}
         mb="2%"
-        whileHover={!hidden ? { scale: 1.1 } : ''}
-        whileTap={!hidden ? { scale: 0.9 } : ''}
+        whileHover={!hidden ? { scale: 1.6 } : ''}
+        whileTap={!hidden ? { scale: 1.4 } : ''}
         custom={0}
         animate={controls}
         onClick={isMobile ? null : openDelayed}
@@ -62,7 +62,7 @@ const Logo = ({ isMobile, hidden }) => {
         custom={1}
         animate={controls}        
       >
-        Bienvenido a AlocaoRP
+        Bienvenido a El Efecto RP
       </MotionHeading>
 
       <MotionText
@@ -74,7 +74,7 @@ const Logo = ({ isMobile, hidden }) => {
         custom={2}
         animate={controls}
       >
-        Descubre el servidor AlocaoRp de GTA Roleplay en Fivem
+        Descubre el servidor El Efecto RP de GTA Roleplay en Fivem
       </MotionText>
 
       {isMobile ? null : (

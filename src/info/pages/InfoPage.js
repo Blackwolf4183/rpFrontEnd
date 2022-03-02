@@ -14,7 +14,7 @@ const InfoPage = () => {
         <Navbar/>
         <AuthButton/>
         <DonationsSection/>
-        <Box h="1000px"/>
+
 
     </>
   );

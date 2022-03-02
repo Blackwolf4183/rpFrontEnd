@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import MainDesktopPage from './main/pages/MainDesktopPage';
 import MainMobilePage from './main/pages/MainMobilePage';
+import { useColorMode } from '@chakra-ui/react';
 
 import { Authcontext } from './context/auth-context';
 import {
@@ -87,6 +88,18 @@ function App() {
       </Switch>
       )
   }
+
+
+  //default dark color mode
+  //TODO: comprobar si funciona
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+      if(colorMode === "light"){
+        toggleColorMode();
+      }
+  }, [])
+  
 
   return (
     <Authcontext.Provider

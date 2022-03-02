@@ -32,7 +32,7 @@ const StaffDrawer = props => {
         <DrawerCloseButton />
         <Center>
           <Heading size="xl" mt="50px" mb="10px">
-            Integrantes del Staff de AlocaoRP
+            Integrantes del Staff de El Efecto RP
           </Heading>
         </Center>
         <DrawerBody>
@@ -42,7 +42,7 @@ const StaffDrawer = props => {
               w={150} /* Ratio de 1.32 */
               h={113}
               userSelect="none"
-              alt="Logo AlocaoRP"
+              alt="Logo El Efecto RP"
               mt="20px"
             />
           </Center>

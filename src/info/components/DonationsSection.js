@@ -4,6 +4,7 @@ import {
   VStack,
   Button,
   useDisclosure,
+  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import DonationBox from './DonationBox';
@@ -18,8 +19,8 @@ const DonationsSection = () => {
   const auth = useContext(Authcontext);
   const history = useHistory();
 
-  const [isLoading, setIsLoading] = useState(false);
   const [donations, setDonations] = useState([]);
+  const [error,setError] = useState(null);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -27,16 +28,17 @@ const DonationsSection = () => {
     axios
       .get('http://localhost:5000/api/donations')
       .then(response => {
-        console.log(response.data.donations);
+        //console.log(response.data.donations);
         setDonations(response.data.donations);
       })
       .catch(err => {
-        console.log('error: ' + err);
+        console.log('error: ' + err.message);
+        setError(err.message)
       });
   }, []);
 
   return (
-    <Center mt="150px">
+    <Center mt="150px" mb="50px">
       <DonationsModal isOpen={isOpen} onClose={onClose} />
       <VStack spacing="50px">
         <Heading>Donaciones</Heading>
@@ -62,23 +64,33 @@ const DonationsSection = () => {
           </Button>
         )}
 
-        <Heading size="md">
+        
+        <Heading size="md" textAlign={"center"} pl="25px" pr="25px">
           !Contribuye al servidor y forma parte de la comunidad!
         </Heading>
 
-        <VStack spacing="10px" align={"left"} maxHeight={'600px'} overflowY="scroll" p="20px">
-          <DonationBox name="Jose" amount="200" />
-          {donations
-            ? donations.map(item => {
-                return (
-                  <DonationBox
-                    key={item.id}
-                    donatorId={item.donatorId}
-                    amount={item.amount.$numberDecimal}
-                  />
-                );
-              })
-            : null}
+        <VStack
+          spacing="10px"
+          align={'left'}
+          maxHeight={'600px'}
+          maxWidth="1000px"
+          overflowY="scroll"
+          p="20px"
+        >
+          {donations &&
+           (donations.length == 0 ? <Heading textAlign={"center"}>Ups, todavía no hay donaciones, ¡se tú el primero en ayudarnos!</Heading>
+            :
+            donations.map(item => {
+              return (
+                <DonationBox
+                  key={item.id}
+                  donatorId={item.donatorId}
+                  amount={item.amount.$numberDecimal}
+                  date={item.date}
+                />
+              );
+            })
+            )}
         </VStack>
       </VStack>
     </Center>
