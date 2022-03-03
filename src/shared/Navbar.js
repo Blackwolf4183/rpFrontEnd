@@ -23,7 +23,7 @@ const Navbar = () => {
         position="fixed"
         zIndex={100}
         top="25px"
-        maxWidth="80%"
+
       >
         <NavLink to="/">
           <IconButton textAlign={'center'} colorScheme="teal">

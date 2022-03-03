@@ -42,12 +42,11 @@ const Logo = ({ isMobile, hidden }) => {
 
       <MotionImage
         src={LogoGrande}
-        w={isLowHeight ? [150, 200] : [200, 250, 330]} /* Ratio de 1.32 */
-        h={isLowHeight ? [113, 151] : [151, 189, 250]}
+        w={isLowHeight ? [150, 300] : [220, 260, 400]}
         userSelect="none"
         alt="Logo El Efecto Rp"
-        mt={isMobile ? '10vh' : isLowHeight ? '5vh' : '15vh'}
-        mb="2%"
+        mt={isMobile ? '7vh' : isLowHeight ? '2vh' : '10vh'}
+        mb={isLowHeight ? "-10%" : "-15%"}
         whileHover={!hidden ? { scale: 1.6 } : ''}
         whileTap={!hidden ? { scale: 1.4 } : ''}
         custom={0}

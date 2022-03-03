@@ -19,7 +19,7 @@ import { Divider } from '@chakra-ui/layout';
 const ContactModal = props => {
   const { onCopy } =
     useClipboard(
-      '' /* TODO: AÑADIR CORREO ADECUADO  */
+      'elefectorp@gmail.com' 
     ); 
   const toast = useToast();
 
@@ -46,14 +46,14 @@ const ContactModal = props => {
             <ArrowForwardIcon w="20px" h="20px" />
             Envíanos un correo a{' '}
             <Link color="teal.500" onClick={copyLinkHandler}>
-              Lo sentimos, no tenemos aun correo disponible
+              Haz click para copiar al portapapeles nuestra dirección de correo
             </Link>
           </Text>
           <Divider w="70%" m="10px 0 10px 0" />
           <Text fontWeight="600">
             <ArrowForwardIcon w="20px" h="20px" />
             Crea un ticket en nuestro{' '}
-            <Link color="teal.500" isExternal href={'https://discord.gg/CU2YJsVHfH'}>
+            <Link color="teal.500" isExternal href={'https://discord.gg/FnNV2keeDd'}>
               servidor de Discord
             </Link>
           </Text>

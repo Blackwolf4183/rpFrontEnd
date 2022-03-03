@@ -5,7 +5,7 @@
             "id":1,
             "rank":"fundador",
             "pictureUrl":"",
-            "name":"Choclito",
+            "name":"Aitor",
             "shortDescription":"Fundador de El Efecto RP",
             "discordId":"",
             "mail":"",
@@ -20,96 +20,6 @@
             "discordId":"",
             "mail":"",
             "instagram":""
-        },
-        {
-            "id":3,
-            "rank":"moderador",
-            "pictureUrl":"",
-            "name":"Gallego",
-            "shortDescription":"Enc. Fac. Ilegales",
-            "discordId":"",
-            "mail":"",
-            "instagram":""
-        },
-        {
-            "id":4,
-            "rank":"moderador",
-            "pictureUrl":"",
-            "name":"AimR",
-            "shortDescription":"Moderador",
-            "discordId":"1605",
-            "mail":"raulmorenosarrio@gmail.com",
-            "instagram":"@19raulmoreno_"
-        },
-        {
-            "id":5,
-            "rank":"moderador",
-            "pictureUrl":"",
-            "name":"Jozue",
-            "shortDescription":"Moderador +",
-            "discordId":"",
-            "mail":"",
-            "instagram":""
-        },
-        {
-            "id":6,
-            "rank":"administrador",
-            "pictureUrl":"",
-            "name":"Nekr0",
-            "shortDescription":"Administrador",
-            "discordId":"NeKr0#2150",
-            "mail":"juanmata12356@gmail.com",
-            "instagram":"juanma.bc"
-        },
-        {
-            "id":7,
-            "rank":"soporte",
-            "pictureUrl":"",
-            "name":"KLKtuberman",
-            "shortDescription":"",
-            "discordId":"KLKtuberman#0001",
-            "mail":"Franciscobermanluna@hotmail.com",
-            "instagram":"_klktuberman"
-        },
-        {
-            "id":8,
-            "rank":"moderador",
-            "pictureUrl":"https://media-cdn.tripadvisor.com/media/photo-p/17/a0/47/d2/mamasita-cafe-pushkar.jpg",
-            "name":"Mamasita",
-            "shortDescription":"Moderador del servidor",
-            "discordId":"𝕸𝖆𝖒𝖆𝖘𝖎𝖙𝖆#8072",
-            "mail":"omarquesadafoughal@gmail.com",
-            "instagram":"omarquesadaf"
-        },
-        {
-            "id":9,
-            "rank":"moderador",
-            "pictureUrl":"https://cdn.discordapp.com/attachments/848934789041881168/912361297331486790/unknown.png",
-            "name":"Unai",
-            "shortDescription":"Tu PVP player de confi",
-            "discordId":"Unai#8851",
-            "mail":"nirebitxi@gmail.com",
-            "instagram":"unaaii_24"
-        },
-        {
-            "id":10,
-            "rank":"moderador",
-            "pictureUrl":"",
-            "name":"Nicolas",
-            "shortDescription":"Enc. Fac. Ilegales",
-            "discordId":"nicolasnfa#6537",
-            "mail":"contactonicolasnfa@gmail.com",
-            "instagram":""
-        },
-        {
-            "id":11,
-            "rank":"soporte",
-            "pictureUrl":"https://www.vivires.com/blog/wp-content/uploads/2017/03/Pablo-Emilio-Escobar-Gaviria3-800x533.jpg",
-            "name":"Deivii99",
-            "shortDescription":"Tu PVP player de confi",
-            "discordId":"Deivii99#9822",
-            "mail":"davidquelmo@gmail.com",
-            "instagram":"@guijarrodaviidd"
         }
 
 
