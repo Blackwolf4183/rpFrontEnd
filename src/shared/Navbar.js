@@ -3,24 +3,16 @@ import {
   IconButton,
   Center,
   Wrap,
-  HStack,
-  Spacer,
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-
-import { Authcontext } from '../context/auth-context';
-import { useContext } from 'react';
 
 import { motion } from 'framer-motion';
-import AuthButton from '../auth/components/AuthButton';
 
 const Navbar = () => {
-  const auth = useContext(Authcontext);
 
   return (
     <Center>

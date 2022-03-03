@@ -4,7 +4,6 @@ import {
   VStack,
   Button,
   useDisclosure,
-  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import DonationBox from './DonationBox';
@@ -78,7 +77,7 @@ const DonationsSection = () => {
           p="20px"
         >
           {donations &&
-           (donations.length == 0 ? <Heading textAlign={"center"}>Ups, todavía no hay donaciones, ¡se tú el primero en ayudarnos!</Heading>
+           (donations.length === 0 ? <Heading textAlign={"center"}>Ups, todavía no hay donaciones, ¡se tú el primero en ayudarnos!</Heading>
             :
             donations.map(item => {
               return (
