@@ -50,7 +50,7 @@ const StaffDrawer = props => {
           <Center>
             <Box w="50%" textAlign="center">
               <Text mt="20px" fontSize="xl">
-                Os presentamos los componentes del Staff de AlocaoRP.
+                Os presentamos los componentes del Staff de El Efecto RP.
               </Text>
               <Text fontSize="xl">
                 Os proporcionamos a todos los usuarios del servidor con un

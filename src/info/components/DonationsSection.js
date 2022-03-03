@@ -65,7 +65,7 @@ const DonationsSection = () => {
 
         
         <Heading size="md" textAlign={"center"} pl="25px" pr="25px">
-          !Contribuye al servidor y forma parte de la comunidad!
+          ¡Contribuye al servidor y forma parte de la comunidad!
         </Heading>
 
         <VStack
