@@ -83,7 +83,7 @@ const Signup = () => {
               password: password,
             }) */
           axios
-            .post('http://localhost:5000/api/users/signup/', {
+            .post(`${process.env.REACT_APP_BACKEND_URL}/users/signup/`, {
               name: username,
               steamId: steamId,
               email: mail,

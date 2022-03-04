@@ -80,7 +80,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
 
           axios
             .post(
-              'http://localhost:5000/api/donations/',
+              `${process.env.REACT_APP_BACKEND_URL}/donations/`,
               {
                 order_id: data.orderID,
                 paypal_email: details.payer.email_address,

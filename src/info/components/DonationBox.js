@@ -10,7 +10,7 @@ const DonationBox = ({ donatorId, amount, date }) => {
   const [username, setUsername] = useState(null);
   const [error, setError] = useState(null);
 
-  axios.get('http://localhost:5000/api/users/' + donatorId )
+  axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/` + donatorId )
   .then(response => {
     setUsername(response.data.user.name);
   })

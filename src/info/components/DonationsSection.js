@@ -25,7 +25,7 @@ const DonationsSection = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/donations')
+      .get(`${process.env.REACT_APP_BACKEND_URL}/donations`)
       .then(response => {
         //console.log(response.data.donations);
         setDonations(response.data.donations);
