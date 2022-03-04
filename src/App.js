@@ -18,6 +18,7 @@ import { useMediaQuery } from '@react-hook/media-query';
 import { useState, useCallback,useEffect } from 'react';
 import InfoPage from './info/pages/InfoPage';
 import Auth from './auth/pages/Auth';
+import TermsPage from './terminos/TermsPage';
 
 function App() {
   const isInPhone = useMediaQuery('(max-width:680px)');
@@ -76,22 +77,25 @@ function App() {
       </Switch>
     );
   } else {
+    console.log("we are here 2")
     routes = (
     <Switch>
         <Route path="/" exact>
           {isInPhone ? <MainMobilePage /> : <MainDesktopPage />}
         </Route>
-        <Route path="/main">
+        <Route path="/main" exact>
           <InfoPage />
         </Route>
-        <Redirect to="/main" />
+        <Route path="/main/terminos" exact>
+          <TermsPage/>
+        </Route>
+        <Redirect to="/main"/>
       </Switch>
       )
   }
 
 
   //default dark color mode
-  //TODO: comprobar si funciona
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {

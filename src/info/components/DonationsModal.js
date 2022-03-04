@@ -15,7 +15,9 @@ import {
   InputRightElement,
   Heading,
   Center,
-  useToast
+  useToast,
+  Text,
+  Checkbox,
 } from '@chakra-ui/react';
 
 import { CheckIcon } from '@chakra-ui/icons';
@@ -25,6 +27,8 @@ import { useContext } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PayPalButton = window.paypal.Buttons.driver('react', { React, ReactDOM });
 
@@ -37,6 +41,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
   const [concept, setConcept] = useState(null);
   const [price, setPrice] = useState('0.00');
   const [isPriceValid, setIsPriceValid] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
 
   const createOrder = (data, actions) => {
     return actions.order.create({
@@ -59,8 +64,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
           //console.log(details);
           //alert("Transaction completed by " + details.payer.name.given_name)
 
-          
-          const testDonation = {
+          /* const testDonation = {
             order_id: data.orderID,
             paypal_email: details.payer.email_address,
             paypal_name: details.payer.name.given_name,
@@ -70,7 +74,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
             amount: price,
           };
 
-          console.log(testDonation);
+          console.log(testDonation); */
 
           const config = {
             headers: {
@@ -97,7 +101,8 @@ const DonationsModal = ({ isOpen, onClose }) => {
               onClose();
               toast({
                 title: 'Pago recibido',
-                description: 'Se ha enviado un recibo a tu dirección de correo asociada a esta cuenta. ¡Muchas gracias por su donación!',
+                description:
+                  'Se ha enviado un recibo a tu dirección de correo asociada a esta cuenta. ¡Muchas gracias por su donación!',
                 variant: 'solid',
                 status: 'success',
                 duration: 9000,
@@ -128,6 +133,10 @@ const DonationsModal = ({ isOpen, onClose }) => {
 
   const handleChangeConcept = e => {
     setConcept(e.target.value);
+  };
+
+  const handleCheck = e => {
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -169,10 +178,19 @@ const DonationsModal = ({ isOpen, onClose }) => {
             <Heading size="md">Cantidad a donar: {price ? price : 0}$</Heading>
           </Center>
 
-          <PayPalButton
-            createOrder={(data, actions) => createOrder(data, actions)}
-            onApprove={(data, actions) => onApprove(data, actions)}
-          />
+          {isChecked && (
+            <PayPalButton
+              createOrder={(data, actions) => createOrder(data, actions)}
+              onApprove={(data, actions) => onApprove(data, actions)}
+            />
+          )}
+
+          <Checkbox isChecked={isChecked} onChange={handleCheck}>
+            Acepto los{' '}
+            <Link to="/main/terminos" target="_blank" rel="noopener noreferrer"><b>términos y condiciones</b></Link>
+          </Checkbox>
+          {!isChecked && <Text color="red.300">*Debes aceptar los términos y condiciones para poder donar</Text>}
+          
         </ModalBody>
 
         <ModalFooter>
