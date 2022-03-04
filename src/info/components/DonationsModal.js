@@ -15,6 +15,7 @@ import {
   InputRightElement,
   Heading,
   Center,
+  useToast
 } from '@chakra-ui/react';
 
 import { CheckIcon } from '@chakra-ui/icons';
@@ -30,6 +31,8 @@ const PayPalButton = window.paypal.Buttons.driver('react', { React, ReactDOM });
 const DonationsModal = ({ isOpen, onClose }) => {
   const auth = useContext(Authcontext);
   const history = useHistory();
+
+  const toast = useToast();
 
   const [concept, setConcept] = useState(null);
   const [price, setPrice] = useState('0.00');
@@ -90,7 +93,16 @@ const DonationsModal = ({ isOpen, onClose }) => {
               config
             )
             .then(response => {
-              console.log('response data: ' + response.data);
+              //console.log('response data: ' + response.data);
+              onClose();
+              toast({
+                title: 'Pago recibido',
+                description: 'Se ha enviado un recibo a tu dirección de correo asociada a esta cuenta. ¡Muchas gracias por su donación!',
+                variant: 'solid',
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              });
             })
             .catch(err => {
               console.log(err);

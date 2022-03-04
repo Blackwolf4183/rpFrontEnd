@@ -33,7 +33,7 @@ const DonationBox = ({ donatorId, amount, date }) => {
               Nueva
             </Badge>
           )}
-          {username} ha realizado una donación de {amount} €. !El
+          {username} ha realizado una donación de {amount} $. !El
           servidor te está agradecido!
         </Text>
       ) : (

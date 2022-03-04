@@ -31,8 +31,9 @@ const DonationsSection = () => {
         setDonations(response.data.donations);
       })
       .catch(err => {
-        console.log('error: ' + err.message);
+        
         setError(err.message)
+        console.log('error: ' + error);
       });
   }, []);
 

@@ -90,7 +90,7 @@ const Signup = () => {
               password: password,
             })
             .then(response => {
-              console.log(response.data)
+              //console.log(response.data)
               const responseData = response.data;
               actions.setSubmitting(false);
               //console.log(responseData.userId);

@@ -55,7 +55,7 @@ const Login = () => {
               password: password,
             })
             .then(response => {
-              console.log(response.data);
+              //console.log(response.data);
               const responseData = response.data;
               actions.setSubmitting(false);
               auth.login(responseData.userId, responseData.token);
