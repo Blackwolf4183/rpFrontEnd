@@ -35,10 +35,8 @@ const Signup = () => {
   function steamIdValidator(value) {
     let error;
     if ( !value || 
-      !value.match(
-        /^steam:\d+$/
-      )
-    ) {
+      !value.startsWith("steam:"))
+     {
       error = 'Steam Id no válida';
     }
     return error;
