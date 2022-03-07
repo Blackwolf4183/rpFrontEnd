@@ -77,7 +77,7 @@ function App() {
       </Switch>
     );
   } else {
-    console.log("we are here 2")
+
     routes = (
     <Switch>
         <Route path="/" exact>

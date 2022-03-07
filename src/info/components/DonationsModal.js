@@ -90,7 +90,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
                 paypal_email: details.payer.email_address,
                 paypal_name: details.payer.name.given_name,
                 paypal_surname: details.payer.name.surname,
-                paypal_payer_id: details.payer.name.surname,
+                paypal_payer_id: details.payer.payer_id,
                 concept: concept,
                 amount: price,
               },
