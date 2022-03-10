@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import { IconButton } from '@chakra-ui/react';
+import { IconButton,Button } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOutAlt,faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt,faUser, faRightToBracket} from '@fortawesome/free-solid-svg-icons';
 
 import { useContext } from 'react';
 import { Authcontext } from '../../context/auth-context';
@@ -17,16 +17,24 @@ const AuthButton = () => {
         }
       };
 
-    return (
-    <NavLink to="/auth">
-      <IconButton onClick={logout} colorScheme="teal" position={"absolute"} right="0" m={5}>
-        <FontAwesomeIcon
-          style={{ fontSize: '20px' }}
-          icon={auth.isLoggedIn ? faSignOutAlt : faUser}
-        />
-      </IconButton>
-    </NavLink>
-  );
+    if(auth.isLoggedIn){
+      return (
+        <Button  onClick={logout}>
+              Cerrar Sesión
+              <FontAwesomeIcon style={{"margin-left":"15px"}} icon={faRightToBracket}/>
+            </Button>
+      )
+    }else{
+      return (
+        <NavLink to="/auth">
+          <Button colorScheme={"teal"}>
+              Iniciar Sesión
+              <FontAwesomeIcon style={{"margin-left":"15px"}} icon={faRightToBracket}/>
+            </Button>
+        </NavLink>
+      );
+    }
+    
 };
 
 export default AuthButton;

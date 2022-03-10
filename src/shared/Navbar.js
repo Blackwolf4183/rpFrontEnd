@@ -1,100 +1,116 @@
-import {
-  Heading,
-  IconButton,
-  Center,
-  Wrap,
-} from '@chakra-ui/react';
-import React from 'react';
+import { Heading, Text, HStack, Spacer, Box } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useMediaQuery } from '@react-hook/media-query';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 import { motion } from 'framer-motion';
+import AuthButton from '../auth/components/AuthButton';
+import { Link } from 'react-router-dom';
+
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
 
 const Navbar = () => {
+  const mobile = useMediaQuery('(max-width:870px)');
 
-  const isInPhone = useMediaQuery('(max-width:680px)');
+  const variants = {
+    active: {
+      width: '100%',
+      transition: { duration: 0.3 }
+    },
+    inactive: {
+      width: '0%',
+      transition: { duration: 0.3 }
+    },
+  };
 
-  //TODO: hacer modo movil para pagina principal
-  if(isInPhone){
-    return <div></div>
-  }else{
+  const [navBarState, setNavBarState] = useState({
+    nosotros: 'inactive',
+    actualizaciones: 'inactive',
+    donaciones: 'inactive',
+  });
+
+  if (mobile) {
+    return <div>hola</div>;
+  } else {
     return (
-    
-      <Center>
-        <Wrap
-          spacing="20px"
-          maxWidth={'1200px'}
-          justify="center"
-          position="fixed"
-          zIndex={100}
-          top="25px"
-          /* bgColor={"teal.700"} */
-          borderRadius={"sm"}
+      <HStack mt="10" w="90%" spacing="5">
+        <Heading fontSize={'2xl'}>El Efecto RP</Heading>
+
+        <Spacer />
+
+        <MotionText
+          fontSize={'lg'}
+          fontWeight={'600'}
+          userSelect={'none'}
+          onHoverStart={() => {
+            setNavBarState({ ...navBarState, nosotros: 'active' });
+          }}
+          onHoverEnd={() =>
+            setNavBarState({ ...navBarState, nosotros: 'inactive' })
+          }
         >
-          <NavLink to="/">
-            <IconButton textAlign={'center'} colorScheme="teal">
-              <FontAwesomeIcon style={{ fontSize: '20px' }} icon={faHome} />
-            </IconButton>
-          </NavLink>
-  
-          <Heading fontSize="lg" lineHeight={'40px'} userSelect="none">
-            <NavLink to="/main">
-              <motion.p
-                whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
-              >
-                Inicio
-              </motion.p>
-            </NavLink>
-          </Heading>
-          {/* TODO: animación hacia cierto elemento de la pagina (scroll) */}
-          <Heading
-            fontSize="lg"
-            lineHeight={'40px'}
-            whiteSpace="nowrap"
-            cursor="pointer"
-            userSelect="none"
-          >
-            <motion.p
-              whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
-            >
-              Sobre nosotros
-            </motion.p>
-          </Heading>
-  
-          <Heading
-            fontSize="lg"
-            lineHeight={'40px'}
-            cursor="pointer"
-            userSelect="none"
-          >
-            <motion.p
-              whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
-            >
-              Donaciones
-            </motion.p>
-          </Heading>
-  
-          <Heading
-            fontSize="lg"
-            lineHeight={'40px'}
-            cursor="pointer"
-            userSelect="none"
-          >
-            <motion.p
-              whileHover={{ textShadow: '0px 0px 12px rgb(255,255,255)' }}
-            >
-              Actualizaciones
-            </motion.p>
-          </Heading>
-        </Wrap>
-      </Center>
+          <Link to="#nosotros">Nosotros</Link>
+          <MotionBox
+            w="100%"
+            h="2px"
+            bgColor="white"
+            initial={{ width: '0%' }}
+            animate={navBarState.nosotros}
+            variants={variants}
+            
+          />
+        </MotionText>
+
+        <MotionText
+          fontSize={'lg'}
+          fontWeight={'600'}
+          userSelect={'none'}
+          onHoverStart={() => {
+            setNavBarState({ ...navBarState, actualizaciones: 'active' });
+          }}
+          onHoverEnd={() =>
+            setNavBarState({ ...navBarState, actualizaciones: 'inactive' })
+          }
+        >
+          <Link to="#actualizaciones">Actualizaciones</Link>
+          <MotionBox
+            w="100%"
+            h="2px"
+            bgColor="white"
+            initial={{ width: '0%' }}
+            animate={navBarState.actualizaciones}
+            variants={variants}
+          />
+        </MotionText>
+
+        <MotionText
+          fontSize={'lg'}
+          fontWeight={'600'}
+          userSelect={'none'}
+          onHoverStart={() => {
+            setNavBarState({ ...navBarState, donaciones: 'active' });
+          }}
+          onHoverEnd={() =>
+            setNavBarState({ ...navBarState, donaciones: 'inactive' })
+          }
+        >
+          <Link to="#donaciones">Donaciones</Link>
+          <MotionBox
+            w="100%"
+            h="2px"
+            bgColor="white"
+            initial={{ width: '0%' }}
+            animate={navBarState.donaciones}
+            variants={variants}
+          />
+        </MotionText>
+
+        <AuthButton />
+      </HStack>
     );
   }
-
-  
 };
 
 export default Navbar;

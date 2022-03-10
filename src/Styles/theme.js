@@ -24,18 +24,13 @@ const colors = {
     icons:"rgba(250, 250, 250, 0.95)",
     menus:"rgba(0, 0, 0, 0.5)",
 
-    /* INFORMATIONPANNEL TYPES */
-    /* news:"rgba(125, 58, 180, 0.85)", */
-    news:"rgba(16, 121, 150, 0.95)",
-    updates:"rgba(192, 48, 29, 0.85)",
-    aboutUsBg:"rgba(0, 0, 0, 0.80)",
-
     divider:"rgba(255, 255, 255, 0.40)",
     darkDivider:"rgba(0, 0, 0, 0.40)",
     hoverHamburguerMenuItem:"rgba(0, 0, 0, 0.1)",
     progressBarScroll:"rgba(103, 58, 180, 0.85)",
     staffMemberCardFont:"rgba(0,0,0,1)",
-    staffMemberCardBg:"rgba(250, 250, 250, 0.95)"
+    staffMemberCardBg:"rgba(250, 250, 250, 0.95)",
+
 
 }
 

@@ -19,7 +19,7 @@ const DonationsSection = () => {
   const history = useHistory();
 
   const [donations, setDonations] = useState([]);
-  const [error,setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -31,8 +31,7 @@ const DonationsSection = () => {
         setDonations(response.data.donations);
       })
       .catch(err => {
-        
-        setError(err.message)
+        setError(err.message);
         console.log('error: ' + error);
       });
   }, []);
@@ -64,8 +63,7 @@ const DonationsSection = () => {
           </Button>
         )}
 
-        
-        <Heading size="md" textAlign={"center"} pl="25px" pr="25px">
+        <Heading size="md" textAlign={'center'} pl="25px" pr="25px">
           ¡Contribuye al servidor y forma parte de la comunidad!
         </Heading>
 
@@ -78,19 +76,22 @@ const DonationsSection = () => {
           p="20px"
         >
           {donations &&
-           (donations.length === 0 ? <Heading textAlign={"center"}>Ups, todavía no hay donaciones, ¡se tú el primero en ayudarnos!</Heading>
-            :
-            donations.map(item => {
-              return (
-                <DonationBox
-                  key={item.id}
-                  donatorId={item.donatorId}
-                  amount={item.amount.$numberDecimal}
-                  date={item.date}
-                />
-              );
-            })
-            )}
+            (donations.length === 0 ? (
+              <Heading textAlign={'center'}>
+                Ups, todavía no hay donaciones, ¡se tú el primero en ayudarnos!
+              </Heading>
+            ) : (
+              donations.map(item => {
+                return (
+                  <DonationBox
+                    key={item.id}
+                    donatorId={item.donatorId}
+                    amount={item.amount.$numberDecimal}
+                    date={item.date}
+                  />
+                );
+              })
+            ))}
         </VStack>
       </VStack>
     </Center>
