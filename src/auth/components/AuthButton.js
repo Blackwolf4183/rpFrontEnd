@@ -27,7 +27,7 @@ const AuthButton = () => {
     }else{
       return (
         <NavLink to="/auth">
-          <Button colorScheme={"teal"}>
+          <Button bgColor={"secondary_buttons"}>
               Iniciar Sesión
               <FontAwesomeIcon style={{"margin-left":"15px"}} icon={faRightToBracket}/>
             </Button>

@@ -1,6 +1,6 @@
 import { Heading, Text, HStack, Spacer, Box } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 import { useMediaQuery } from '@react-hook/media-query';
 
@@ -17,11 +17,11 @@ const Navbar = () => {
   const variants = {
     active: {
       width: '100%',
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3 },
     },
     inactive: {
       width: '0%',
-      transition: { duration: 0.3 }
+      transition: { duration: 0.3 },
     },
   };
 
@@ -36,7 +36,11 @@ const Navbar = () => {
   } else {
     return (
       <HStack mt="10" w="90%" spacing="5">
-        <Heading fontSize={'2xl'}>El Efecto RP</Heading>
+        <Link to="/">
+          <Heading  userSelect={'none'} fontSize={'2xl'}>
+            El Efecto RP
+          </Heading>
+        </Link>
 
         <Spacer />
 
@@ -44,6 +48,7 @@ const Navbar = () => {
           fontSize={'lg'}
           fontWeight={'600'}
           userSelect={'none'}
+          cursor="pointer"
           onHoverStart={() => {
             setNavBarState({ ...navBarState, nosotros: 'active' });
           }}
@@ -51,7 +56,16 @@ const Navbar = () => {
             setNavBarState({ ...navBarState, nosotros: 'inactive' })
           }
         >
-          <Link to="#nosotros">Nosotros</Link>
+          <ScrollLink
+            activeClass="active"
+            to="nosotros"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={700}
+          >
+            Nosotros
+          </ScrollLink>
           <MotionBox
             w="100%"
             h="2px"
@@ -59,7 +73,6 @@ const Navbar = () => {
             initial={{ width: '0%' }}
             animate={navBarState.nosotros}
             variants={variants}
-            
           />
         </MotionText>
 
@@ -67,6 +80,7 @@ const Navbar = () => {
           fontSize={'lg'}
           fontWeight={'600'}
           userSelect={'none'}
+          cursor="pointer"
           onHoverStart={() => {
             setNavBarState({ ...navBarState, actualizaciones: 'active' });
           }}
@@ -74,7 +88,16 @@ const Navbar = () => {
             setNavBarState({ ...navBarState, actualizaciones: 'inactive' })
           }
         >
-          <Link to="#actualizaciones">Actualizaciones</Link>
+          <ScrollLink
+            activeClass="active"
+            to="actualizaciones"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={700}
+          >
+            Actualizaciones
+          </ScrollLink>
           <MotionBox
             w="100%"
             h="2px"
@@ -89,6 +112,7 @@ const Navbar = () => {
           fontSize={'lg'}
           fontWeight={'600'}
           userSelect={'none'}
+          cursor="pointer"
           onHoverStart={() => {
             setNavBarState({ ...navBarState, donaciones: 'active' });
           }}
@@ -96,7 +120,16 @@ const Navbar = () => {
             setNavBarState({ ...navBarState, donaciones: 'inactive' })
           }
         >
-          <Link to="#donaciones">Donaciones</Link>
+          <ScrollLink
+            activeClass="active"
+            to="donaciones"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={700}
+          >
+            Donaciones
+          </ScrollLink>
           <MotionBox
             w="100%"
             h="2px"

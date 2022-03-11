@@ -32,6 +32,9 @@ const colors = {
     staffMemberCardBg:"rgba(250, 250, 250, 0.95)",
 
 
+    secondary_buttons:"#08B55E",
+    secondary_donation_box:"#02AFAA",
+
 }
 
 const fonts = {
