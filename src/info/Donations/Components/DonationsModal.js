@@ -22,12 +22,11 @@ import {
 
 import { CheckIcon } from '@chakra-ui/icons';
 
-import { Authcontext } from '../../context/auth-context';
+import { Authcontext } from '../../../context/auth-context';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const PayPalButton = window.paypal.Buttons.driver('react', { React, ReactDOM });
