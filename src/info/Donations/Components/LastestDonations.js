@@ -18,11 +18,6 @@ const LatestDonations = ({ donations }) => {
 
   const [displayBadge, setDisplayBadge] = useState(true);
   /* FIXME: IMPLEMENTAR BADGE DE DATES */
-  /* var displayDate =
-  new Date().getTime() -
-  new Date(donations[currentDonation].date).getTime();
-var displayBadge = new Date(displayDate).getDay() < 3; //si la donación es de una semana atrás
-console.log(new Date(displayDate).getDay()); */
 
   const [username, setUsername] = useState(null);
   const [error, setError] = useState(null);
@@ -36,6 +31,10 @@ console.log(new Date(displayDate).getDay()); */
         )
         .then(response => {
           setUsername(response.data.user.name);
+          var displayDate =
+            new Date().getTime() -
+            new Date(donations[currentDonation].date).getTime();
+          setDisplayBadge(new Date(displayDate).getDay() < 2);
         })
         .catch(err => {
           setError(err.message);
@@ -57,7 +56,12 @@ console.log(new Date(displayDate).getDay()); */
       </Heading>
 
       <HStack justify={'center'} spacing="15px">
-        <IconButton onClick={() => {currentDonation > 0 && setCurrentDonation(currentDonation - 1)}} disabled={!donations}>
+        <IconButton
+          onClick={() => {
+            currentDonation > 0 && setCurrentDonation(currentDonation - 1);
+          }}
+          disabled={!donations}
+        >
           <FontAwesomeIcon
             style={{ width: '30px', height: '30px' }}
             icon={faArrowLeft}
@@ -92,6 +96,7 @@ console.log(new Date(displayDate).getDay()); */
             mt="15px"
             userSelect={'none'}
             w="160px"
+            wordBreak={'none'}
           >
             {!username ? (
               <Center>
@@ -102,7 +107,13 @@ console.log(new Date(displayDate).getDay()); */
             )}
           </Text>
         </Box>
-        <IconButton onClick={() => {currentDonation < donations.length -1 && setCurrentDonation(currentDonation + 1)}} disabled={!donations}>
+        <IconButton
+          onClick={() => {
+            currentDonation < donations.length - 1 &&
+              setCurrentDonation(currentDonation + 1);
+          }}
+          disabled={!donations}
+        >
           <FontAwesomeIcon
             style={{ width: '30px', height: '30px' }}
             icon={faArrowRight}

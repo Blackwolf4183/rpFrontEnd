@@ -82,6 +82,38 @@ const Navbar = () => {
           userSelect={'none'}
           cursor="pointer"
           onHoverStart={() => {
+            setNavBarState({ ...navBarState, donaciones: 'active' });
+          }}
+          onHoverEnd={() =>
+            setNavBarState({ ...navBarState, donaciones: 'inactive' })
+          }
+        >
+          <ScrollLink
+            activeClass="active"
+            to="donaciones"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={700}
+          >
+            Donaciones
+          </ScrollLink>
+          <MotionBox
+            w="100%"
+            h="2px"
+            bgColor="white"
+            initial={{ width: '0%' }}
+            animate={navBarState.donaciones}
+            variants={variants}
+          />
+        </MotionText>
+
+        <MotionText
+          fontSize={'lg'}
+          fontWeight={'600'}
+          userSelect={'none'}
+          cursor="pointer"
+          onHoverStart={() => {
             setNavBarState({ ...navBarState, actualizaciones: 'active' });
           }}
           onHoverEnd={() =>
@@ -108,37 +140,7 @@ const Navbar = () => {
           />
         </MotionText>
 
-        <MotionText
-          fontSize={'lg'}
-          fontWeight={'600'}
-          userSelect={'none'}
-          cursor="pointer"
-          onHoverStart={() => {
-            setNavBarState({ ...navBarState, donaciones: 'active' });
-          }}
-          onHoverEnd={() =>
-            setNavBarState({ ...navBarState, donaciones: 'inactive' })
-          }
-        >
-          <ScrollLink
-            activeClass="active"
-            to="donaciones"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={700}
-          >
-            Donaciones
-          </ScrollLink>
-          <MotionBox
-            w="100%"
-            h="2px"
-            bgColor="white"
-            initial={{ width: '0%' }}
-            animate={navBarState.donaciones}
-            variants={variants}
-          />
-        </MotionText>
+        
 
         <AuthButton />
       </HStack>

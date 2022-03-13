@@ -1,7 +1,7 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Skeleton, Text,Heading } from '@chakra-ui/react';
 import React from 'react';
 
-const DonatorBox = ({ username, amount }) => {
+const DonatorBox = ({ username, amount, loading }) => {
   return (
     <Box
       textAlign={'center'}
@@ -10,9 +10,15 @@ const DonatorBox = ({ username, amount }) => {
       borderRadius={'md'}
       bgColor="secondary_donation_box"
     >
-      <Text fontWeight={'600'} fontSize="lg" p="20px">
-        {username} - {amount} $
+      {loading ? (
+        <Text fontWeight={'600'} fontSize="lg" p="20px">
+        <Skeleton w="200px" h="20px"/>
       </Text>
+      ) : (
+        <Text fontWeight={'600'} fontSize="xl" p="20px">
+          {username} - {amount} $
+        </Text>
+      )}
     </Box>
   );
 };

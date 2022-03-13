@@ -10,6 +10,7 @@ import Nosotros from '../About/Nosotros';
 import SocialSideMenu from '../components/SocialSideMenu';
 import Donations from '../Donations/Donations';
 import ScrollDownIcons from '../components/ScrollDownIcons';
+import Updates from '../Updates/Updates';
 
 const InfoPage = () => {
   return (
@@ -32,6 +33,9 @@ const InfoPage = () => {
         <Nosotros />
 
         <Donations />
+
+        <Updates />
+
         <Footer />
       </VStack>
     </>
