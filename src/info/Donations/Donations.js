@@ -178,7 +178,7 @@ const Donations = () => {
                 variants={motionBoxVariant}
                 initial={"hidden"}
                 w="3px"
-                bgGradient="linear(to-t,#ED7147 , #D50353)"
+                bgGradient="linear(to-b,#ED7147 , #D50353)"
                 animate={controls}
               />
             </Flex>

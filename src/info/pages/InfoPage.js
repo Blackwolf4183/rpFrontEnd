@@ -1,5 +1,5 @@
 import React from 'react';
-import { VStack, Image, Box } from '@chakra-ui/react';
+import { VStack, Image } from '@chakra-ui/react';
 
 import Navbar from '../../shared/Navbar';
 
@@ -12,10 +12,15 @@ import Donations from '../Donations/Donations';
 import ScrollDownIcons from '../components/ScrollDownIcons';
 import Updates from '../Updates/Updates';
 
+import { useMediaQuery } from '@react-hook/media-query';
+
 const InfoPage = () => {
+  const isLowRes = useMediaQuery('(max-width:860px)');
+
   return (
     <>
-      <SocialSideMenu />
+      {!isLowRes && <SocialSideMenu />}
+
       <VStack bgColor="blackAlpha.400" h="auto" spacing="50px">
         <Navbar />
 

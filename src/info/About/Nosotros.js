@@ -40,10 +40,11 @@ const Nosotros = () => {
       ></Box>
       <Flex mt="50px" pl="5" pr="5">
         <MotionBox
-          w="3px"
-          bgGradient="linear(to-t,#ED7147 , #D50353)"
+          style={{width:"3px"}}
+          bgGradient="linear(to-b,#ED7147 , #D50353)"
           ref={ref}
           ml="20px"
+          mr="5px"
           variants={motionBoxVariant}
           initial={'hidden'}
           animate={controls}

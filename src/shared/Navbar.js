@@ -1,12 +1,22 @@
-import { Heading, Text, HStack, Spacer, Box } from '@chakra-ui/react';
+import {
+  Heading,
+  Text,
+  HStack,
+  Spacer,
+  Box,
+  VStack,
+  Image,
+} from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 import { useMediaQuery } from '@react-hook/media-query';
 
 import { motion } from 'framer-motion';
 import AuthButton from '../auth/components/AuthButton';
 import { Link } from 'react-router-dom';
+
+import NavbarLine from '../assets/navbarLine.svg';
 
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
@@ -32,12 +42,18 @@ const Navbar = () => {
   });
 
   if (mobile) {
-    return <div>hola</div>;
+    return (
+      <VStack spacing="5px" position={"absolute"} left="10" top="10" cursor="pointer"> 
+        <Image src={NavbarLine} w="30px" animation={{x:5}}/>
+        <Image src={NavbarLine} w="30px" />
+        <Image src={NavbarLine} w="30px" />
+      </VStack>
+    );
   } else {
     return (
       <HStack mt="10" w="90%" spacing="5">
         <Link to="/">
-          <Heading  userSelect={'none'} fontSize={'2xl'}>
+          <Heading userSelect={'none'} fontSize={'2xl'}>
             El Efecto RP
           </Heading>
         </Link>
@@ -139,8 +155,6 @@ const Navbar = () => {
             variants={variants}
           />
         </MotionText>
-
-        
 
         <AuthButton />
       </HStack>
