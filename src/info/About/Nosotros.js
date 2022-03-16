@@ -2,11 +2,14 @@ import { Heading, Box, Text, Flex } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const MotionBox = motion(Box);
 
 const Nosotros = () => {
   /* ANIMACIONES */
+  const isLowRes = useMediaQuery('(max-width:860px)');
+
   const { ref, inView, entry } = useInView();
   const controls = useAnimation();
   const motionBoxVariant = {
@@ -29,7 +32,12 @@ const Nosotros = () => {
   }, [controls, inView]);
 
   return (
-    <Box w="60%" textAlign={'left'} pb="100px" id="nosotros">
+    <Box
+      w={isLowRes ? '90%' : '60%'}
+      textAlign={'left'}
+      pb="100px"
+      id="nosotros"
+    >
       <Heading textAlign={'left'}>Sobre Nosotros</Heading>
       <Box
         borderTop={'2px solid'}
@@ -39,17 +47,19 @@ const Nosotros = () => {
         minW={'300px'}
       ></Box>
       <Flex mt="50px" pl="5" pr="5">
-        <MotionBox
-          style={{width:"3px"}}
-          bgGradient="linear(to-b,#ED7147 , #D50353)"
-          ref={ref}
-          ml="20px"
-          mr="5px"
-          variants={motionBoxVariant}
-          initial={'hidden'}
-          animate={controls}
-        />
-        <Text fontSize={'xl'} ml="50px" maxW={'800px'} fontWeight="600">
+        {!isLowRes && (
+          <MotionBox
+            style={{ width: '3px',background:"linear-gradient(to bottom, #ED7147, #D50353)" }}
+            ref={ref}
+            ml="20px"
+            mr="5px"
+            variants={motionBoxVariant}
+            initial={'hidden'}
+            animate={controls}
+          />
+        )}
+
+        <Text fontSize={'xl'} ml={!isLowRes && "50px"} textAlign="justify" maxW={'800px'} fontWeight="600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
           sagittis feugiat est vitae varius. Praesent vestibulum mauris ut urna
           imperdiet ullamcorper. Duis ac nibh enim. Curabitur iaculis purus

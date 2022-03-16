@@ -1,15 +1,24 @@
-import { Image,Box,Text } from '@chakra-ui/react'
-import React from 'react'
-
+import { Image, Box } from '@chakra-ui/react';
+import { useMediaQuery } from '@react-hook/media-query';
 import footer from '../../assets/footer.svg';
+import footerMovil from '../../assets/footerMovil.svg';
 
 const Footer = () => {
-  return (
-      <Box w="100%" position="relative">
-          <Image src={footer} w="100%" />
-            {/* <Text position={"absolute"} bottom="8px">Síguenos en nuestras redes sociales</Text> */}
-      </Box>
-  )
-}
+  const isLowRes = useMediaQuery('(max-width:860px)');
 
-export default Footer
+  if (!isLowRes) {
+    return (
+      <Box w="100%" position="relative">
+        <Image src={footer} w="100%" userSelect={"none"} />
+      </Box>
+    );
+  } else {
+    return (
+      <Box w="110%" position="relative">
+        <Image src={footerMovil} w="100%" mb="-2vh" userSelect={"none"}/>
+      </Box>
+    );
+  }
+};
+
+export default Footer;

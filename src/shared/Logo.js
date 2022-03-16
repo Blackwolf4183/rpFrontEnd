@@ -45,7 +45,7 @@ const Logo = ({ isMobile, hidden }) => {
         w={isLowHeight ? [150, 300] : [220, 260, 400]}
         userSelect="none"
         alt="Logo El Efecto Rp"
-        mt={isMobile ? '7vh' : isLowHeight ? '2vh' : '10vh'}
+        mt={isMobile ? '7vh' :( isLowHeight ? '-8vh' : '6vh')}
         mb={isLowHeight ? "-10%" : "-15%"}
         whileHover={!hidden ? { scale: 1.6 } : ''}
         whileTap={!hidden ? { scale: 1.4 } : ''}

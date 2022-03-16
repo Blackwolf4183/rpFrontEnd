@@ -18,10 +18,11 @@ import { useHistory } from 'react-router-dom';
 import { useDonations } from '../../shared/hooks/useDonations';
 import { useInView } from 'react-intersection-observer';
 import axios from 'axios';
+import { useMediaQuery } from '@react-hook/media-query';
 
 const MotionBox = motion(Box);
 
-function getTopDonations(array) {
+function getTopDonations(array) { //Ordena el array de donaciones por $ y devuelve los 5 primeros
   let sortedArray = array.sort((a, b) =>
     parseFloat(a.amount.$numberDecimal) > parseFloat(b.amount.$numberDecimal)
       ? -1
@@ -34,6 +35,9 @@ function getTopDonations(array) {
 }
 
 const Donations = () => {
+
+  const isLowRes = useMediaQuery('(max-width:860px)');
+
   const history = useHistory();
   const auth = useContext(Authcontext);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -96,7 +100,7 @@ const Donations = () => {
   return (
     <>
       <DonationsModal isOpen={isOpen} onClose={onClose} />
-      <Box w="60%" pb="100px" id="donaciones">
+      <Box w={isLowRes ? '90%' : '60%'}pb="100px" id="donaciones">
         <Heading textAlign={'right'}>Donaciones</Heading>
         <Box
           borderTop={'2px solid'}

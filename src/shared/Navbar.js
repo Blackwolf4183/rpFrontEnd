@@ -6,13 +6,20 @@ import {
   Box,
   VStack,
   Image,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Button,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 
 import { useMediaQuery } from '@react-hook/media-query';
 
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import AuthButton from '../auth/components/AuthButton';
 import { Link } from 'react-router-dom';
 
@@ -20,11 +27,12 @@ import NavbarLine from '../assets/navbarLine.svg';
 
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
+const MotionImg = motion(Image);
 
 const Navbar = () => {
   const mobile = useMediaQuery('(max-width:870px)');
 
-  const variants = {
+  const linkVariants = {
     active: {
       width: '100%',
       transition: { duration: 0.3 },
@@ -35,6 +43,15 @@ const Navbar = () => {
     },
   };
 
+  const mobileNavControls = useAnimation();
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+  const handleMobileNavClick = () => {
+    setIsNavbarExpanded(!isNavbarExpanded);
+    isNavbarExpanded
+      ? mobileNavControls.start('inactive')
+      : mobileNavControls.start('active');
+  };
+
   const [navBarState, setNavBarState] = useState({
     nosotros: 'inactive',
     actualizaciones: 'inactive',
@@ -43,11 +60,57 @@ const Navbar = () => {
 
   if (mobile) {
     return (
-      <VStack spacing="5px" position={"absolute"} left="10" top="10" cursor="pointer"> 
-        <Image src={NavbarLine} w="30px" animation={{x:5}}/>
-        <Image src={NavbarLine} w="30px" />
-        <Image src={NavbarLine} w="30px" />
-      </VStack>
+      <>
+        <NavbarDrawer
+          isOpen={isNavbarExpanded}
+          onClose={handleMobileNavClick}
+        />
+        <VStack
+          spacing="5px"
+          position={'absolute'}
+          left="10"
+          top="10"
+          userSelect={'none'}
+          cursor="pointer"
+          onClick={handleMobileNavClick}
+        >
+          <MotionImg
+            src={NavbarLine}
+            w="25px"
+            userSelect={'none'}
+            initial={'inactive'}
+            animate={mobileNavControls}
+            variants={{
+              active: {
+                x: 5,
+                transition: { duration: 0.3 },
+              },
+              inactive: {
+                x: 0,
+                transition: { duration: 0.3 },
+              },
+            }}
+          />
+          <MotionImg src={NavbarLine} w="25px" userSelect={'none'} />
+          <MotionImg
+            src={NavbarLine}
+            w="25px"
+            userSelect={'none'}
+            initial={'inactive'}
+            animate={mobileNavControls}
+            variants={{
+              active: {
+                x: -5,
+                transition: { duration: 0.3 },
+              },
+              inactive: {
+                x: 0,
+                transition: { duration: 0.3 },
+              },
+            }}
+          />
+        </VStack>
+      </>
     );
   } else {
     return (
@@ -88,7 +151,7 @@ const Navbar = () => {
             bgColor="white"
             initial={{ width: '0%' }}
             animate={navBarState.nosotros}
-            variants={variants}
+            variants={linkVariants}
           />
         </MotionText>
 
@@ -120,7 +183,7 @@ const Navbar = () => {
             bgColor="white"
             initial={{ width: '0%' }}
             animate={navBarState.donaciones}
-            variants={variants}
+            variants={linkVariants}
           />
         </MotionText>
 
@@ -152,7 +215,7 @@ const Navbar = () => {
             bgColor="white"
             initial={{ width: '0%' }}
             animate={navBarState.actualizaciones}
-            variants={variants}
+            variants={linkVariants}
           />
         </MotionText>
 
@@ -163,3 +226,79 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const NavbarDrawer = ({ isOpen, onClose }) => {
+  return (
+    <Drawer isOpen={isOpen} onClose={onClose} placement="right">
+      <DrawerOverlay bg="transparent" />
+      <DrawerContent>
+        <DrawerCloseButton />
+        <DrawerHeader bgColor={'rgba(17, 21, 28, 0.95)'}>
+          El Efecto RP
+        </DrawerHeader>
+
+        <DrawerBody bgColor={'rgba(17, 21, 28, 0.95)'} textAlign="left">
+          <VStack spacing="20px" textAlign={'left'}>
+            <Button
+              w="60%"
+              mt="100px"
+              variant="outline"
+              borderWidth={'2px'}
+              size="lg"
+              borderColor="#D50954"
+              onClick={() => {
+                onClose();
+                scroller.scrollTo('nosotros', {
+                  duration: 800,
+                  delay: 0,
+                  smooth: 'easeInOutQuart',
+                  offset:-50,
+                });
+              }}
+            >
+              Nosotros
+            </Button>
+            <Button
+              w="60%"
+              mt="100px"
+              variant="outline"
+              borderWidth={'2px'}
+              size="lg"
+              borderColor="#D50954"
+              onClick={() => {
+                onClose();
+                scroller.scrollTo('donaciones', {
+                  duration: 800,
+                  delay: 0,
+                  smooth: 'easeInOutQuart',
+                  offset:-50,
+                });
+              }}
+            >
+              Donaciones
+            </Button>
+            <Button
+              w="60%"
+              mt="100px"
+              variant="outline"
+              borderWidth={'2px'}
+              size="lg"
+              borderColor="#D50954"
+              onClick={() => {
+                onClose();
+                scroller.scrollTo('actualizaciones', {
+                  duration: 800,
+                  delay: 0,
+                  smooth: 'easeInOutQuart',
+                  offset:-50,
+                });
+              }}
+            >
+              Actualizaciones
+            </Button>
+          </VStack>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+};
