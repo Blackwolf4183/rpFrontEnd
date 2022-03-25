@@ -117,7 +117,7 @@ const Navbar = () => {
       <HStack mt="10" w="90%" spacing="5">
         <Link to="/">
           <Heading userSelect={'none'} fontSize={'2xl'}>
-            El Efecto RP
+            Neolife RP
           </Heading>
         </Link>
 
@@ -234,7 +234,7 @@ const NavbarDrawer = ({ isOpen, onClose }) => {
       <DrawerContent>
         <DrawerCloseButton />
         <DrawerHeader bgColor={'rgba(17, 21, 28, 0.95)'}>
-          El Efecto RP
+          Neolife RP
         </DrawerHeader>
 
         <DrawerBody bgColor={'rgba(17, 21, 28, 0.95)'} textAlign="left">

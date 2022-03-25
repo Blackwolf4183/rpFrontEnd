@@ -1,4 +1,4 @@
-import LogoGrande from '../assets/LogoGrande.png';
+import LogoSvg from '../assets/Logo.svg';
 import { Image, Text, Heading } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { ChevronUpIcon } from '@chakra-ui/icons';
@@ -41,12 +41,12 @@ const Logo = ({ isMobile, hidden }) => {
       <AlertRedirectFivem open={isOpen} onCloseAlert={onClose}/>
 
       <MotionImage
-        src={LogoGrande}
+        src={LogoSvg}
         w={isLowHeight ? [150, 300] : [220, 260, 400]}
         userSelect="none"
-        alt="Logo El Efecto Rp"
-        mt={isMobile ? '7vh' :( isLowHeight ? '-8vh' : '6vh')}
-        mb={isLowHeight ? "-10%" : "-15%"}
+        alt="Logo NeoLife Rp"
+        mt="15vh"
+        mb="2vh"
         whileHover={!hidden ? { scale: 1.6 } : ''}
         whileTap={!hidden ? { scale: 1.4 } : ''}
         custom={0}
@@ -61,7 +61,7 @@ const Logo = ({ isMobile, hidden }) => {
         custom={1}
         animate={controls}        
       >
-        Bienvenido a El Efecto RP
+        Bienvenido a Neolife RP
       </MotionHeading>
 
       <MotionText
@@ -73,7 +73,7 @@ const Logo = ({ isMobile, hidden }) => {
         custom={2}
         animate={controls}
       >
-        Descubre el servidor El Efecto RP de GTA Roleplay en Fivem
+        Descubre el servidor Neolife RP de GTA Roleplay en Fivem
       </MotionText>
 
       {isMobile ? null : (

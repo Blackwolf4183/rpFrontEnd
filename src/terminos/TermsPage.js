@@ -45,7 +45,7 @@ const TermsPage = () => {
             <Text fontSize={'xl'}>
               Efecto Roleplay informa:  Si la persona adquiere un negocio o
               empresa dentro del servidor y este se mantiene poco activo y/o con
-              mal funcionamiento, El Efecto RP se reserva el derecho de
+              mal funcionamiento, Neolife RP se reserva el derecho de
               retirarle esta empresa o negocio y no devolver el importe enviado
               con anterioridad.
             </Text>

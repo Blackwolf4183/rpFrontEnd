@@ -11,7 +11,7 @@ import {
 
 import { Box, Center } from '@chakra-ui/layout';
 
-import LogoPequeño from '../../assets/LogoGrande.png';
+import LogoPequeño from '../../assets/Logo.svg';
 
 import StaffMemberCard from '../HMenuItems/StaffMemberCard'
 import StaffMembersRow from '../HMenuItems/StaffMembersRow';
@@ -32,7 +32,7 @@ const StaffDrawer = props => {
         <DrawerCloseButton />
         <Center>
           <Heading size="xl" mt="50px" mb="10px">
-            Integrantes del Staff de El Efecto RP
+            Integrantes del Staff de Neolife RP
           </Heading>
         </Center>
         <DrawerBody>
@@ -42,7 +42,7 @@ const StaffDrawer = props => {
               w={150} /* Ratio de 1.32 */
               h={113}
               userSelect="none"
-              alt="Logo El Efecto RP"
+              alt="Logo Neolife RP"
               mt="20px"
             />
           </Center>
@@ -50,7 +50,7 @@ const StaffDrawer = props => {
           <Center>
             <Box w="50%" textAlign="center">
               <Text mt="20px" fontSize="xl">
-                Os presentamos los componentes del Staff de El Efecto RP.
+                Os presentamos los componentes del Staff de Neolife RP.
               </Text>
               <Text fontSize="xl">
                 Os proporcionamos a todos los usuarios del servidor con un

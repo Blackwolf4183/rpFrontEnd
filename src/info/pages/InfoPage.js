@@ -2,7 +2,7 @@ import React from 'react';
 import { VStack, Image, Box, Heading } from '@chakra-ui/react';
 
 import Navbar from '../../shared/Navbar';
-import logo from '../../assets/LogoPrueba1.svg';
+import logo from '../../assets/Logo.svg'
 import Nosotros from '../About/Nosotros';
 import SocialSideMenu from '../components/SocialSideMenu';
 import Donations from '../Donations/Donations';
@@ -38,10 +38,11 @@ const InfoPage = () => {
         <Image
           userSelect={'none'}
           src={logo}
-          w={'60%'}
+          w={'50%'}
           maxW={'700px'}
-          minWidth={isLowRes ? '360px' : '400px'}
-          pt={isLowRes ? '80px' : '10vh'}
+          minWidth={isLowRes ? '320px' : '360px'}
+          pt={isLowRes ? '120px' : '12vh'}
+          pb="10vh"
           id="logo"
           ref={ref}
         />
