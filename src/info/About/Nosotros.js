@@ -60,11 +60,11 @@ const Nosotros = () => {
         )}
 
         <Text fontSize={'xl'} ml={!isLowRes && "50px"} textAlign="justify" maxW={'800px'} fontWeight="600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          sagittis feugiat est vitae varius. Praesent vestibulum mauris ut urna
-          imperdiet ullamcorper. Duis ac nibh enim. Curabitur iaculis purus
-          lacus, sed aliquam eros tempor in. Fusce lectus libero, hendrerit non
-          gravida ultricies, pellentesque non nulla. Curabitur dignissim justo
+          Buenas! Nos alegra verte por aquí! Somos una tienda enfocada en el aspecto roleplay del famoso juego Gta V.
+          Nuestro objetivo es proporcionar todo tipo de servicios para aquellos que se aventuran en este extenso mundo.
+          Entre ellos, podeis esperar encontraros items como <b>keys de FiveM</b>, scripts creados desde 0 por nosotros 
+          así como servicios para la construcción y mantenimiento de servidores. 
+          <Text >También aspiramos a la venta de hosts seguros y fiables para vuestros servidores. </Text>
         </Text>
       </Flex>
     </Box>

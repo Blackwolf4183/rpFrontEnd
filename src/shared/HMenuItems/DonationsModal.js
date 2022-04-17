@@ -25,7 +25,7 @@ const DonationsModal = props => {
         <ModalHeader size="xl">Donaciones</ModalHeader>
         <ModalCloseButton />
         <ModalBody textAlign="center">
-          <Text fontWeight="600" m="0px 20px 0px 20px">Contribuye al servidor de Neolife RP aportando lo que desees a nuestro paypal.</Text>
+          <Text fontWeight="600" m="0px 20px 0px 20px">Contribuye al servidor de Reborn Services aportando lo que desees a nuestro paypal.</Text>
 
           <Link href={'/main/'} textDecor="none"> 
             <Button colorScheme="teal" variant="outline" mt="20px" mb="20px" p="10px 5px 10px 5px">
@@ -56,7 +56,7 @@ const DonationsModal = props => {
               </Box>
             </Button>
           </Link>
-          <Text fontWeight="600" m="0px 20px 0px 20px">¡Muchas gracias por confiar en Neolife RP!</Text>
+          <Text fontWeight="600" m="0px 20px 0px 20px">¡Muchas gracias por confiar en Reborn Services!</Text>
         </ModalBody>
 
         <ModalFooter>

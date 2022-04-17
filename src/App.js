@@ -1,8 +1,6 @@
 import './App.css';
 
 import React from 'react';
-import MainDesktopPage from './main/pages/MainDesktopPage';
-import MainMobilePage from './main/pages/MainMobilePage';
 import { useColorMode } from '@chakra-ui/react';
 
 import { Authcontext } from './context/auth-context';
@@ -62,9 +60,6 @@ function App() {
     routes = (
       <Switch>
         <Route path="/" exact>
-          {isInPhone ? <MainMobilePage /> : <MainDesktopPage />}
-        </Route>
-        <Route path="/main">
           <InfoPage />
         </Route>
         <Route path="/auth/login">
@@ -81,15 +76,12 @@ function App() {
     routes = (
     <Switch>
         <Route path="/" exact>
-          {isInPhone ? <MainMobilePage /> : <MainDesktopPage />}
-        </Route>
-        <Route path="/main" exact>
           <InfoPage />
         </Route>
         <Route path="/main/terminos" exact>
           <TermsPage/>
         </Route>
-        <Redirect to="/main"/>
+        <Redirect to="/"/>
       </Switch>
       )
   }
