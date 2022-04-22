@@ -1,6 +1,6 @@
 import { Center, Box } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { GlassImageWrapper } from '../../main/components/GlassImageWrapper';
+import { GlassImageWrapper } from '../../shared/GlassImageWrapper';
 import LoadingPage from '../../shared/LoadingPage';
 
 import Login from '../components/Login';

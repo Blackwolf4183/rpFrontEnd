@@ -115,11 +115,9 @@ const Navbar = () => {
   } else {
     return (
       <HStack mt="10" w="90%" spacing="5">
-        <Link to="/">
           <Heading userSelect={'none'} fontSize={'2xl'}>
-            Neolife RP
+            Reborn Services
           </Heading>
-        </Link>
 
         <Spacer />
 
@@ -201,13 +199,13 @@ const Navbar = () => {
         >
           <ScrollLink
             activeClass="active"
-            to="actualizaciones"
+            to="catalogo"
             spy={true}
             smooth={true}
             offset={-70}
             duration={700}
           >
-            Actualizaciones
+            Catálogo
           </ScrollLink>
           <MotionBox
             w="100%"
@@ -234,7 +232,7 @@ const NavbarDrawer = ({ isOpen, onClose }) => {
       <DrawerContent>
         <DrawerCloseButton />
         <DrawerHeader bgColor={'rgba(17, 21, 28, 0.95)'}>
-          Neolife RP
+          Reborn Services
         </DrawerHeader>
 
         <DrawerBody bgColor={'rgba(17, 21, 28, 0.95)'} textAlign="left">

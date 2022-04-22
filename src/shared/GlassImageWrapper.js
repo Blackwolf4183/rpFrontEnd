@@ -1,5 +1,5 @@
 import { Flex, Grid } from '@chakra-ui/react';
-import bgPic from '../../assets/background.jpg'
+import bgPic from '../assets/background.jpg';
 
 export const GlassImageWrapper = props => {
   return (

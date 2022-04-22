@@ -8,8 +8,8 @@ const Updates = () => {
   const isLowRes = useMediaQuery('(max-width:860px)');
 
   return (
-    <Box w={isLowRes ? "90%" : "60%"} textAlign={'left'} pb="100px" id="actualizaciones">
-      <Heading textAlign={'left'}>Actualizaciones</Heading>
+    <Box w={isLowRes ? "90%" : "60%"} textAlign={'left'} pb="100px" id="catalogo">
+      <Heading textAlign={'left'}>Catálogo</Heading>
       <Box
         borderTop={'2px solid'}
         mt="10px"
@@ -18,8 +18,8 @@ const Updates = () => {
         minW={'300px'}
       />
       <Text fontSize={'xl'} ml="50px" maxW={'800px'} mt="50px" fontWeight="600">
-        Descubre que ha cambiado en el servidor, haz click en cualquiera de las
-        actualizaciones para más detalle
+        Descubre nuestro catálogo de items y servicios que puedes adquirir para mejorar o comenzar tu servidor de roleplay.
+        Haz click para la descripción de cada artículo.
       </Text>
 
       <Wrap mt="50px" spacing="15px" justify={ isLowRes && "center"}>

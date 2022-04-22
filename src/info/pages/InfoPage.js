@@ -20,7 +20,6 @@ const InfoPage = () => {
   const isLowRes = useMediaQuery('(max-width:860px)');
   const { ref, inView } = useInView();
 
-  
 
   return (
     <>
@@ -38,7 +37,7 @@ const InfoPage = () => {
         <Image
           userSelect={'none'}
           src={logo}
-          w={'50%'}
+          w={'20%'}
           maxW={'700px'}
           minWidth={isLowRes ? '320px' : '360px'}
           pt={isLowRes ? '120px' : '12vh'}
