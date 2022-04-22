@@ -16,7 +16,7 @@ const SocialSideMenu = () => {
   return (
     <MotionStack
       position={'fixed'}
-      top="30%"
+      top="40%"
       left="30"
       spacing="15px"
       overflow="hidden"
@@ -24,10 +24,10 @@ const SocialSideMenu = () => {
       initial={{x:"-100%"}}
       transition={{ duration: 0.55 }}
     >
-      <Icon link="https://vm.tiktok.com/ZMLDSrn9o/" icon={faTiktok} />
-      <Icon link="https://discord.gg/FnNV2keeDd" icon={faDiscord} />
-      <Icon link="https://twitter.com/" icon={faTwitter} />
-      <Icon link="https://www.instagram.com/elefectorp/" icon={faInstagram} />
+      {/* <Icon link="https://vm.tiktok.com/ZMLDSrn9o/" icon={faTiktok} /> */}
+      <Icon link="https://discord.gg/p7JeqDWaa2" icon={faDiscord} />
+      {/* <Icon link="https://twitter.com/" icon={faTwitter} /> */}
+      <Icon link="https://www.instagram.com/" icon={faInstagram} />
     </MotionStack>
   );
 };

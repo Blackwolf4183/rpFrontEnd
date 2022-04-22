@@ -34,7 +34,7 @@ const TermsPage = () => {
           <HStack>
             <ListIcon as={ArrowRightIcon} color="green.500" />
             <Text fontSize={'xl'}>
-              Efecto Roleplay no hace reembolsos una vez se haga uso del
+              Reborn Services no hace reembolsos una vez se haga uso del
               servicio adquirido.
             </Text>
           </HStack>

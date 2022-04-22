@@ -199,13 +199,13 @@ const Navbar = () => {
         >
           <ScrollLink
             activeClass="active"
-            to="actualizaciones"
+            to="catalogo"
             spy={true}
             smooth={true}
             offset={-70}
             duration={700}
           >
-            Actualizaciones
+            Catálogo
           </ScrollLink>
           <MotionBox
             w="100%"

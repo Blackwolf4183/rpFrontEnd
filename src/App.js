@@ -19,7 +19,6 @@ import Auth from './auth/pages/Auth';
 import TermsPage from './terminos/TermsPage';
 
 function App() {
-  const isInPhone = useMediaQuery('(max-width:680px)');
 
   const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);

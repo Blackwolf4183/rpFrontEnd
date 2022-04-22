@@ -49,7 +49,10 @@ const Nosotros = () => {
       <Flex mt="50px" pl="5" pr="5">
         {!isLowRes && (
           <MotionBox
-            style={{ width: '3px',background:"linear-gradient(to bottom, #ED7147, #D50353)" }}
+            style={{
+              width: '3px',
+              background: 'linear-gradient(to bottom, #ED7147, #D50353)',
+            }}
             ref={ref}
             ml="20px"
             mr="5px"
@@ -59,12 +62,24 @@ const Nosotros = () => {
           />
         )}
 
-        <Text fontSize={'xl'} ml={!isLowRes && "50px"} textAlign="justify" maxW={'800px'} fontWeight="600">
-          Buenas! Nos alegra verte por aquí! Somos una tienda enfocada en el aspecto roleplay del famoso juego Gta V.
-          Nuestro objetivo es proporcionar todo tipo de servicios para aquellos que se aventuran en este extenso mundo.
-          Entre ellos, podeis esperar encontraros items como <b>keys de FiveM</b>, scripts creados desde 0 por nosotros 
-          así como servicios para la construcción y mantenimiento de servidores. 
-          <Text >También aspiramos a la venta de hosts seguros y fiables para vuestros servidores. </Text>
+        <Text
+          fontSize={'xl'}
+          ml={!isLowRes && '50px'}
+          textAlign="justify"
+          maxW={'800px'}
+          fontWeight="600"
+        >
+          Buenas! Nos alegra verte por aquí! Somos una tienda enfocada en el
+          aspecto roleplay del famoso juego Gta V. Nuestro objetivo es
+          proporcionar todo tipo de servicios para aquellos que se aventuran en
+          este extenso mundo. Entre ellos, podeis esperar encontraros items como{' '}
+          <b>keys de FiveM</b>, scripts creados desde 0 por nosotros así como
+          servicios para la construcción y mantenimiento de servidores.
+          <Text>
+            También aspiramos a la venta de hosts seguros y fiables para
+            vuestros servidores (Para más información abre un ticket en nuestro
+            discord).{' '}
+          </Text>
         </Text>
       </Flex>
     </Box>

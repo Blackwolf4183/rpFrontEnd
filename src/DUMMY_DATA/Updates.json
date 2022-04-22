@@ -1,16 +1,10 @@
 {
   "updates": [
     {
-      "date": "March 21, 2022",
-      "title": "Inauguración de la página del servidor",
-      "mainText": "Nueva versión actualizada e intuitiva de la página del servidor",
-      "bulletPoints":["Mantenimiento de la página web","Incorporación de nuevos servicios","Punto3","Punto4"]
-    },
-    {
-      "date": "March 22, 2022",
-      "title": "Una pruebaa",
-      "mainText": "Nueva versión actualizada e intuitiva de la página del servidor",
-      "bulletPoints":["Otras cosas","Incorporación de nuevos servicios","Punto3","Punto4"]
+      "date": "April 22, 2022",
+      "title": "Inauguración de la página de Reborn Services",
+      "mainText": "Aquí podreis ir viendo los artículos que colguemos!",
+      "bulletPoints":["Se vienen cositas"]
     }
   ]
 }
