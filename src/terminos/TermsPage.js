@@ -16,7 +16,7 @@ const TermsPage = () => {
     <Center>
     <VStack spacing={'50px'} w="80%">
       <Heading mt="50" textAlign={'center'}>
-        Términos y condiciones de Efecto RP
+        Términos y condiciones de Reborn Services
       </Heading>
       <List spacing={6}>
         <ListItem>
