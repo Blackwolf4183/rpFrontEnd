@@ -186,7 +186,7 @@ const DonationsModal = ({ isOpen, onClose }) => {
 
           <Checkbox isChecked={isChecked} onChange={handleCheck}>
             Acepto los{' '}
-            <Link to="/main/terminos" target="_blank" rel="noopener noreferrer"><b>términos y condiciones</b></Link>
+            <Link to="/terminos" rel="noopener noreferrer"><b>términos y condiciones</b></Link>
           </Checkbox>
           {!isChecked && <Text color="red.300">*Debes aceptar los términos y condiciones para poder donar</Text>}
           

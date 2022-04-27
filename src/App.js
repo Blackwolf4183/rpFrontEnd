@@ -77,7 +77,7 @@ function App() {
         <Route path="/" exact>
           <InfoPage />
         </Route>
-        <Route path="/main/terminos" exact>
+        <Route path="/terminos" exact>
           <TermsPage/>
         </Route>
         <Redirect to="/"/>
