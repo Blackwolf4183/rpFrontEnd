@@ -67,6 +67,9 @@ function App() {
         <Route path="/auth/signup">
           <Auth isLoging={false} />
         </Route>
+        <Route path="/terminos" exact>
+          <TermsPage/>
+        </Route>
         <Redirect to="/auth/login" />
       </Switch>
     );
